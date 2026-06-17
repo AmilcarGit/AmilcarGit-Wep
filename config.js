@@ -3,8 +3,8 @@ require('dotenv').config();
 module.exports = {
     nombre: 'MiNuevoBot-MD',
     prefijo: process.env.PREFIX || '#',
-    ownerNumero: process.env.OWNER_NUMBER || '51912345678',
-    ownerNombre: 'TuNombre',
+    ownerNumero: process.env.OWNER_NUMBER || '51910227479',
+    ownerNombre: 'amilcargit',
     
     // Funciones
     antiLink: true,
