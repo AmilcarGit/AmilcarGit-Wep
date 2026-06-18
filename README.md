@@ -1,4 +1,4 @@
-# AmilcarGit-Wep
+
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=header"/>
 
@@ -15,9 +15,9 @@
 <h2 align="center"> ESTADÍSTICAS </h2>
 </div>
 <div align="center">
-<a href="https://github.com/elrebelde21/">
-<img src="https://github-readme-stats.vercel.app/api?username=elrebelde21&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40&locale=es" width="450"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=elrebelde21&show_icons=true&locale=es&layout=compact&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40" width="290"  alt="elrebelde21"/>
+<a href="https://github.com/AmilcarGit">
+<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40&locale=es" width="450"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=AmilcarGit&show_icons=true&locale=es&layout=compact&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40" width="290"  alt="AmilcarGit"/>
 <br><br>
 </a>
 
