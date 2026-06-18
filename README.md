@@ -2,9 +2,9 @@
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=header"/>
 
-## hola 👋 Bienvenido, te presento mi perfil ✨
+## hola 👋 Bienvenido, te presento mi perfil 👑
 
-<p align="center"><img title="Lolibot" src="https://telegra.ph/file/24a4c7f209e59e40e6334.gif"></p>
+<p align="center"><img title="AmilcarGit" src="https://i.postimg.cc/tR5n70Yq/1000526056.jpg"></p>
 
 <p align="center">
 <img src="https://telegra.ph/file/addf80dc3c8ffd5db8a47.png" alt="The-LoliBot-MD" width="900"/>
