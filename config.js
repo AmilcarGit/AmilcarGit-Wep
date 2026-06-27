@@ -25,7 +25,7 @@ global.yukiJadibts = true
 global.namecanal = '🌼'
 global.idcanal = '120363410616526428@newsletter'
 global.idcanal2 = '120363410616526428@newsletter'
-global.canal = 'https://whatsapp.com/channel/0029VbCv5KCAe5Vpc1nH6u1Y'
+global.canal = 'https://whatsapp.com/channel/0029Vb8G49lKmCPR44sIOE1i'
 global.canalreg = '120363410616526428@newsletter'
 
 global.ch = {
