@@ -9,9 +9,6 @@ import chalk from 'chalk'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require   = createRequire(__dirname)
 
-// ══════════════════════════════════════════
-// BANNER PRINCIPAL
-// ══════════════════════════════════════════
 const { say } = cfonts
 
 function imprimirBanner() {
@@ -43,9 +40,6 @@ function imprimirBanner() {
 
 imprimirBanner()
 
-// ══════════════════════════════════════════
-// LANZADOR
-// ══════════════════════════════════════════
 let isWorking    = false
 let restartCount = 0
 
@@ -107,14 +101,8 @@ async function launch(scripts) {
   }
 }
 
-// ══════════════════════════════════════════
-// INICIO
-// ══════════════════════════════════════════
 launch(['main.js'])
 
-// ══════════════════════════════════════════
-// ERRORES GLOBALES
-// ══════════════════════════════════════════
 const IGNORAR = ['rate-overlimit', 'timed out', 'Connection Closed']
 
 process.on('uncaughtException', (err) => {
