@@ -9,7 +9,7 @@ const tags = {
   descargas:    '📥  Descargas',
   tools:        '🛠️  Herramientas',
   info:         'ℹ️  Información',
-  group:        '👥  Grupos',
+  grupo:        '👥  Grupos',
   game:         '🎮  Juegos',
   multijugador: '🎲  Multijugador',
   gacha:        '🎴  Gacha',
