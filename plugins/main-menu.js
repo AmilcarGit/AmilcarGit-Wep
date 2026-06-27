@@ -17,7 +17,7 @@ const tags = {
   sticker:      '📌  Stickers',
   ia:           '🤖  𝐈𝐀',
   fun:          '😄  Diversión',
-  owner:        '👑  Owner',
+  creador:        '👑  Owner',
 }
 
 const defaultMenu = {
