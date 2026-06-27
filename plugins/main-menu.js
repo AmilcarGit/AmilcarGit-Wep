@@ -30,7 +30,7 @@ const defaultMenu = {
   🌼 *¡Hola,* *%name*! 
    *%greeting*
 
-  ╔─  *Datos del sistema*  ─╗
+  ╔─  *𝗗𝗮𝘁𝗼𝘀 𝗱𝗲𝗹 𝘀𝗶𝘀𝘁𝗲𝗺𝗮*  ─╗
   ║
   ║  🤖  𝑩𝒐𝒕        %botname
   ║  🏷️  𝑴𝒐𝒅𝒐       %tipo
@@ -48,9 +48,9 @@ const defaultMenu = {
   footer: '',
 
   after: `
- ╔════════════════════╗
+ ╔═══════════════════╗
    🌼 *𝚃 𝙷 𝙴 𝙴 𝙻 𝚈 - 𝙼 𝙳*
- ╚════════════════════╝
+ ╚═══════════════════╝
 
   _𝘋𝘦𝘴𝘢𝘳𝘳𝘰𝘭𝘭𝘢𝘥𝘰 𝘤𝘰𝘯 𝘥𝘦𝘥𝘪𝘤𝘢𝘤𝘪𝘰́𝘯 𝘱𝘰𝘳_
   *ᴀ ᴍ ɪ ʟ ᴄ ᴀ ʀ ɢ ɪ ᴛ✓*
@@ -158,7 +158,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
     )
 
     const buttons = [
-      { buttonId: '.code', buttonText: { displayText: '🌼  𝗖𝗿𝗲𝗮𝗿 𝗦𝘂𝗯-𝗕𝗼𝘁' }, type: 1 }
+      { buttonId: '.code', buttonText: { displayText: '🌼 𝗖𝗿𝗲𝗮𝗿 𝗦𝘂𝗯-𝗕𝗼𝘁𖨆' }, type: 1 }
     ]
 
     const messageContent = {
@@ -188,9 +188,9 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
     await conn.reply(
       m.chat,
       [
-        ` ╔══════════════════════╗`,
+        ` ╔═════════════════════`,
         `   🌼  T H E E L Y - M D`,
-        ` ╚══════════════════════╝`,
+        ` ╚═════════════════════`,
         ``,
         `  Ocurrió un problema al cargar`,
         `  el menú. Por favor intenta`,
