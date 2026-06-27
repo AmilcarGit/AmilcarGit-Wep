@@ -163,7 +163,7 @@ async function procesarDescarga(m, conn, url) {
 
     const audioPath = path.join(tmpDir, `${Date.now()}.mp3`)
     const audioRes  = await fetch(download_url)
-    fs.writeFileSync(audioPath, await audioRes.buffer())
+    fs.writeFileSync(audioPath, Buffer.from(await audioRes.arrayBuffer()))
 
     await conn.sendMessage(m.chat, {
       audio:    fs.readFileSync(audioPath),
