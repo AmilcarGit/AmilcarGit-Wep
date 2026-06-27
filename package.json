@@ -12,16 +12,16 @@
   "scripts": {
     "start": "node index.js"
   },
-  "homepage": "https://github.com/AmilcarGit/ElyssiaBot-MD",
+  "homepage": "https://github.com/AmilcarGit/TheEly-MD",
   "author": {
     "name": "AmilcarGit"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmilcarGit/ElyssiaBot-MD.git"
+    "url": "git+https://github.com/AmilcarGit/TheEly-MD.git"
   },
   "bugs": {
-    "url": "https://github.com/AmilcarGit/ElyssiaBot-MD/issues"
+    "url": "https://github.com/AmilcarGit/TheEly-MD/issues"
   },
   "license": "MIT-LICENSE",
   "dependencies": {
