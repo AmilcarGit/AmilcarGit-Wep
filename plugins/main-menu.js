@@ -2,22 +2,22 @@ import fs from 'fs'
 import { join } from 'path'
 
 const tags = {
-  premium:      '💎  Premium',
-  jadibot:      '🌼  Sub-Bots',
-  eco:          '💰  Economía',
-  search:       '🔎  Buscador',
-  descargas:    '📥  Descargas',
-  tools:        '🛠️  Herramientas',
-  info:         'ℹ️  Información',
-  grupo:        '𓅔  Grupos',
-  game:         '🎮  Juegos',
-  multijugador: '🎲  Multijugador',
-  gacha:        '🎴  Gacha',
-  reacciones:   '💥  Reacciones',
-  sticker:      '📌  Stickers',
-  ia:           '🤖  𝐈𝐀',
-  fun:          '▶  Diversión',
-  creador:        '☕︎︎  Owner',
+  premium:      'Premium',
+  jadibot:      'Sub-Bots',
+  grupo:        'Grupos',
+  eco:          'Economía',
+  search:       'Buscador',
+  descargas:    'Descargas',
+  tools:        'Herramientas',
+  info:         'ℹInformación', 
+  game:         'Juegos',
+  multijugador: 'Multijugador',
+  gacha:        'Gacha',
+  reacciones:   'Reacciones',
+  sticker:      'Stickers',
+  ia:           '𝐈𝐀',
+  fun:          'Diversión',
+  creador:        '☕︎︎ Owner',
 }
 
 const defaultMenu = {
@@ -31,20 +31,20 @@ const defaultMenu = {
    *%greeting*
 
   ╔─  *𝗗𝗮𝘁𝗼𝘀 𝗱𝗲𝗹 𝘀𝗶𝘀𝘁𝗲𝗺𝗮*  ─╗
-  ║
-  ║  🤖  𝑩𝒐𝒕        %botname
-  ║  🏷️  𝑴𝒐𝒅𝒐       %tipo
-  ║  📅  𝑭𝒆𝒄𝒉𝒂      %date
-  ║  🕐  𝑯𝒐𝒓𝒂       %time
-  ║  ⏱️  𝑨𝒄𝒕𝒊𝒗𝒊𝒅𝒂𝒅  %uptime
-  ║  👥  𝑮𝒓𝒖𝒑𝒐𝒔     %grupos
-  ║  👤  𝑼𝒔𝒖𝒂𝒓𝒊𝒐𝒔   %usuarios
+  ║          𓁹
+  ║  🤖  𝑩𝒐𝒕☻        %botname
+  ║  🏷️  𝑴𝒐𝒅𝒐☻      %tipo
+  ║  📅  𝑭𝒆𝒄𝒉𝒂☻     %date
+  ║  🕐  𝑯𝒐𝒓𝒂☻      %time
+  ║  ⏱️  𝑨𝒄𝒕𝒊𝒗𝒊𝒅𝒂𝒅☻ %uptime
+  ║  👥  𝑮𝒓𝒖𝒑𝒐𝒔☻    %grupos
+  ║  👤  𝑼𝒔𝒖𝒂𝒓𝒊𝒐𝒔☻  %usuarios
   ╚══════════════════════
-🇨 🇴 🇲 🇦 🇳 🇩 🇴 🇸 ⏤͟͟͞͞✵
+𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇴 🇸𓉳
 %readmore`.trimStart(),
 
   header: '\n  _*𓅇༼ %category ༽𓅇*_\n',
-  body:   '  ═❧☛  *%cmd* %islimit %isPremium\n  ➥ ☄︎➫    %desc',
+  body:   '  ═❧☛  *%cmd* %islimit %isPremium\n  ➥ ☄︎➫    %desc𓆪',
   footer: '',
 
   after: `
