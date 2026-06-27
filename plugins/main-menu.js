@@ -9,15 +9,15 @@ const tags = {
   descargas:    '📥  Descargas',
   tools:        '🛠️  Herramientas',
   info:         'ℹ️  Información',
-  grupo:        '👥  Grupos',
+  grupo:        '𓅔  Grupos',
   game:         '🎮  Juegos',
   multijugador: '🎲  Multijugador',
   gacha:        '🎴  Gacha',
   reacciones:   '💥  Reacciones',
   sticker:      '📌  Stickers',
   ia:           '🤖  𝐈𝐀',
-  fun:          '😄  Diversión',
-  creador:        '👑  Owner',
+  fun:          '▶  Diversión',
+  creador:        '☕︎︎  Owner',
 }
 
 const defaultMenu = {
@@ -43,7 +43,7 @@ const defaultMenu = {
 🇨 🇴 🇲 🇦 🇳 🇩 🇴 🇸 ⏤͟͟͞͞✵
 %readmore`.trimStart(),
 
-  header: '\n  _*☀︎══❀ %category ❀══☀︎*_\n',
+  header: '\n  _*𓅇༼ %category ༽𓅇*_\n',
   body:   '  ═❧☛  *%cmd* %islimit %isPremium\n  ➥ ☄︎➫    %desc',
   footer: '',
 
