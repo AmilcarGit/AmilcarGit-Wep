@@ -1,4 +1,3 @@
-cat > plugins/jadibot.js << 'EOFILE'
 const { useMultiFileAuthState, fetchLatestBaileysVersion, makeCacheableSignalKeyStore } = await import("@whiskeysockets/baileys")
 import qrcode from "qrcode"
 import NodeCache from "node-cache"
