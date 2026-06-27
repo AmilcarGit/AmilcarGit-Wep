@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 const settingsPath = path.resolve('./json/settings.json')
-const defaultImage = 'https://i.postimg.cc/qqFLyv2W/1000536576.jpg'
+const defaultImage = 'https://i.postimg.cc/hGTMdP08/1782561264490.png'
 
 function readSettings() {
   try {
