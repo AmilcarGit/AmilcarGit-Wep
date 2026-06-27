@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/cerrar.js << 'EOFILE'
 import { delay } from "@whiskeysockets/baileys"
 
 let handler = async (m, { conn, text, args, isAdmin, isBotAdmin }) => {
@@ -148,5 +147,3 @@ handler.botAdmin = true
 handler.desc     = 'Cierra el grupo por un tiempo determinado'
 
 export default handler
-EOFILE
-echo "listo"
