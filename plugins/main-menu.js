@@ -5,7 +5,7 @@ const tags = {
   premium:      'Premium',
   jadibot:      'Sub-Bots',
   grupo:        'Grupos',
-  eco:          'Economía',
+  eco:          'RPG/Economía',
   search:       'Buscador',
   descargas:    'Descargas',
   tools:        'Herramientas',
