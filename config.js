@@ -13,7 +13,7 @@ global.prems = []
 global.namebot = '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳'
 global.packname = '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳 🌼'
 global.author = 'AmilcarGit| © 𝟸𝟶𝟸𝟼'
-global.moneda = '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳'
+global.moneda = '🌼 ElyCoins'
 
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.16'
