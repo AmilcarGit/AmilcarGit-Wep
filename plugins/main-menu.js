@@ -4,10 +4,10 @@ import { join } from 'path'
 const tags = {
   premium:      'Premium',
   jadibot:      'Sub-Bots',
-  grupo:        'Grupos',
-  eco:          'RPG/Economía',
   search:       'Buscador',
   descargas:    'Descargas',
+  grupo:        'Grupos',
+  eco:          'RPG/Economía',
   tools:        'Herramientas',
   info:         'ℹInformación', 
   game:         'Juegos',
