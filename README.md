@@ -80,7 +80,7 @@ Antes de instalar, asegúrate de tener instalado en tu sistema:
 <details>
   <summary><b>Instalación Manual</b></summary>
  
-[![blog](https://img.shields.io/badge/Instalacion-Automatica-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/shorts/PESW8LXXlOI?feature=share)
+[![blog](prontovideo)](https://youtube.com/shorts/PESW8LXXlOI?feature=share)
 > *Comandos para instalar de formaa Manual en Termux*
 ```bash
 termux-setup-storage
