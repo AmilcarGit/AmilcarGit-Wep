@@ -1,4 +1,4 @@
-import { xpRange, levelFromExp } from '../lib/levelling.js'
+import { xpRange } from '../lib/levelling.js'
 
 const handler = async (m, { conn }) => {
   const quien  = m.mentionedJid?.[0] || m.quoted?.sender || m.sender
