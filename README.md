@@ -15,6 +15,37 @@
 
 ---
 
+## 🚀 Instalación paso a paso
+
+
+## Instalación por Termux
+
+> [!IMPORTANT]
+> **No garantizamos un funcionamiento perfecto en Termux, aunque trabajamos constantemente para asegurar una buena compatibilidad. Si experimentas lentitud o errores, por favor envía una solicitud con la evidencia correspondiente para que nuestro equipo pueda solucionarlo. Si el problema persiste, te recomendamos considerar los servicios de alojamiento de bots de nuestros patrocinadores.**
+
+<details>
+  <summary><b>Instalación Manual</b></summary>
+ 
+[![blog](prontovideo)](https://youtube.com/shorts/PESW8LXXlOI?feature=share)
+> *Comandos para instalar de formaa Manual en Termux*
+```bash
+termux-setup-storage
+```
+```bash
+apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
+```
+```bash
+git clone https://github.com/AmilcarGit/TheEly-MD.git && cd TheEly-MD
+```
+```bash
+ npm install
+```
+```bash
+npm start
+```
+
+---
+
 ## 📌 Descripción
 **TheEly‑MD** es un bot para WhatsApp que funciona en el modo oficial multi‑dispositivo, sin necesidad de mantener el teléfono conectado permanentemente. Cuenta con un sistema de **plugins independientes**, por lo que agregar, modificar o desactivar funciones es extremadamente sencillo. Ideal para gestión de grupos, automatizaciones, descargas y herramientas útiles para la comunidad.
 
@@ -67,33 +98,3 @@ Antes de instalar, asegúrate de tener instalado en tu sistema:
 
 > En sistemas Linux / Termux se instalan directamente desde el gestor de paquetes.
 
----
-
-## 🚀 Instalación paso a paso
-
-
-## Instalación por Termux
-
-> [!IMPORTANT]
-> **No garantizamos un funcionamiento perfecto en Termux, aunque trabajamos constantemente para asegurar una buena compatibilidad. Si experimentas lentitud o errores, por favor envía una solicitud con la evidencia correspondiente para que nuestro equipo pueda solucionarlo. Si el problema persiste, te recomendamos considerar los servicios de alojamiento de bots de nuestros patrocinadores.**
-
-<details>
-  <summary><b>Instalación Manual</b></summary>
- 
-[![blog](prontovideo)](https://youtube.com/shorts/PESW8LXXlOI?feature=share)
-> *Comandos para instalar de formaa Manual en Termux*
-```bash
-termux-setup-storage
-```
-```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
-```
-```bash
-git clone https://github.com/AmilcarGit/TheEly-MD.git && cd TheEly-MD
-```
-```bash
- npm install
-```
-```bash
-npm start
-```
