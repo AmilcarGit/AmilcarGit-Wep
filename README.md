@@ -78,13 +78,22 @@ Antes de instalar, asegúrate de tener instalado en tu sistema:
 > **No garantizamos un funcionamiento perfecto en Termux, aunque trabajamos constantemente para asegurar una buena compatibilidad. Si experimentas lentitud o errores, por favor envía una solicitud con la evidencia correspondiente para que nuestro equipo pueda solucionarlo. Si el problema persiste, te recomendamos considerar los servicios de alojamiento de bots de nuestros patrocinadores.**
 
 <details>
-  <summary><b>Instalación Automática</b></summary>
+  <summary><b>Instalación Manual</b></summary>
  
 [![blog](https://img.shields.io/badge/Instalacion-Automatica-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/shorts/PESW8LXXlOI?feature=share)
-> *Comandos para instalar de forma automática en Termux*
+> *Comandos para instalar de formaa Manual en Termux*
 ```bash
 termux-setup-storage
 ```
 ```bash
-apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/gata.sh | bash
+apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
+```
+```bash
+git clone https://github.com/AmilcarGit/TheEly-MD && cd TheEly-MD
+```
+```bash
+ npm install
+```
+```bash
+npm start
 ```
