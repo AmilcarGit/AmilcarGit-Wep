@@ -71,7 +71,24 @@ Antes de instalar, asegúrate de tener instalado en tu sistema:
 
 ## 🚀 Instalación paso a paso
 
-### 1️⃣ Clonar el repositorio
-```bash
-git clone https://github.com/AmilcarGit/TheEly-MD.git
+# ACTUALIZAR E INSTALAR REQUISITOS
+pkg update -y && pkg upgrade -y
+pkg install -y nodejs git ffmpeg imagemagick
+termux-setup-storage
+
+# CLONAR E INSTALAR BOT
+rm -rf TheEly-MD
+git clone https://github.com/AmilcarGit/TheEly-MD
 cd TheEly-MD
+npm install
+
+# INICIAR (elige-pairin 
+# npm start
+
+# MANTENER ACTIVO 24/7 EN TERMUX
+npm install -g pm2
+pkg install -y wake-lock
+termux-wake-lock
+pm2 start index.js --name TheEly-MD -- --pairing
+pm2 startup
+pm2 save
