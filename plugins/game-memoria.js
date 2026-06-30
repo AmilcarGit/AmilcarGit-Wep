@@ -209,6 +209,7 @@ handler.before = async (m, { conn }) => {
 handler.command = ['memoria', 'memory']
 handler.tags    = ['game']
 handler.help    = ['memoria']
+handler.register = true
 handler.desc    = 'Encuentra las parejas y gana ElyCoins'
 
 export default handler
