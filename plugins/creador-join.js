@@ -93,7 +93,7 @@ const handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 }
 
 handler.help    = ['join <link>']
-handler.tags    = ['owner']
+handler.tags    = ['creador']
 handler.command = ['join', 'unirse']
 handler.rowner  = true
 handler.desc    = 'Une el bot o sub-bot a un grupo'
