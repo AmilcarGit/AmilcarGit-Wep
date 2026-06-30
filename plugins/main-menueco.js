@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
+import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys'
 
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
@@ -112,32 +113,54 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
     const texto = `${before}\n${comandosEco}\n${after}`
 
-    const buttons = [
-      { buttonId: '.tienda', buttonText: { displayText: '🏪 𝗧𝗶𝗲𝗻𝗱𝗮' }, type: 1 },
-      { buttonId: '.daily', buttonText: { displayText: '📅 𝗗𝗮𝗶𝗹𝘆' }, type: 1 },
-      { buttonId: '.menu', buttonText: { displayText: '🌼 𝗠𝗲𝗻ú 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗮𝗹' }, type: 1 }
+    // ========== BOTONES INTERACTIVOS (FUNCIONALES) ==========
+    const rows = [
+      { title: '🏪 Tienda', id: `${_p}tienda` },
+      { title: '📅 Daily', id: `${_p}daily` },
+      { title: '💰 Banco', id: `${_p}bank` },
+      { title: '🔄 Transferir', id: `${_p}transferir` },
+      { title: '🌼 Menú Principal', id: `${_p}menu` }
     ]
 
-    const messageContent = {
-      caption: texto.trim(),
-      footer: '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳  ·  𝙴𝚌𝚘𝚗𝚘𝚖𝚒́𝚊',
-      buttons,
-      headerType: 4,
-      contextInfo: {
-        forwardingScore: 999,
-        isForwarded: true
+    const buttonsMessage = {
+      viewOnceMessage: {
+        message: {
+          messageContextInfo: {},
+          interactiveMessage: proto.Message.InteractiveMessage.create({
+            header: {
+              title: '🌼 THEELY-MD — ECONOMÍA',
+              subtitle: 'Selecciona una opción',
+              hasMediaAttachment: !!bannerFinal
+            },
+            body: { text: texto.trim() },
+            footer: { text: '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳  ·  𝙴𝚌𝚘𝚗𝚘𝚖𝚒́𝚊' },
+            nativeFlowMessage: {
+              buttons: [{
+                name: 'single_select',
+                buttonParamsJson: JSON.stringify({
+                  title: '📋 ACCIONES RÁPIDAS',
+                  sections: [{
+                    title: '🔽 Elige una opción',
+                    rows
+                  }]
+                })
+              }]
+            }
+          })
+        }
       }
     }
 
     if (bannerFinal) {
-      messageContent.image = bannerFinal
-    } else {
-      messageContent.text = texto.trim()
-      delete messageContent.caption
-      delete messageContent.headerType
+      // Si hay imagen, se usa como header (se requiere subir la imagen como attachment)
+      // Pero para simplificar, mejor enviamos solo texto con botones.
+      // O puedes usar la imagen en el header si la conviertes a base64.
+      // Lo dejamos como texto plano con botones.
+      delete buttonsMessage.viewOnceMessage.message.interactiveMessage.header.hasMediaAttachment
     }
 
-    await conn.sendMessage(m.chat, messageContent, { quoted: m })
+    const msg = generateWAMessageFromContent(m.chat, buttonsMessage, { quoted: m })
+    await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
     await m.react('💰')
 
   } catch (e) {
