@@ -57,7 +57,8 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   📌 Creados hoy: ${Math.floor(Math.random() * 5) + 1} (simulado)
 
   ❀•°•═════ஓ๑♡๑ஓ═════•°•❀
-  𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸 𓉳
+  𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸𓉳
+     🇸 🇺 🇧  🇧 🇴 🇹 🇸 
     ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡
 `
 
