@@ -1,25 +1,13 @@
 import fs from 'fs'
 import { join } from 'path'
-import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys'
 
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     const user = global.db.data.users[m.sender] || {}
     const name = await conn.getName(m.sender)
 
-    const totalGrupos = Object.keys(global.db.data.chats || {}).filter(id => id.endsWith('@g.us')).length
-    const totalUsuarios = Object.keys(global.db.data.users || {}).length
-
     const ahora = new Date()
     const horaPeru = new Date(ahora.toLocaleString('en-US', { timeZone: 'America/Lima' }))
-
-    const date = horaPeru.toLocaleDateString('es', {
-      day: 'numeric', month: 'long', year: 'numeric', weekday: 'long'
-    })
-
-    const time = horaPeru.toLocaleTimeString('es', {
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-    })
 
     const help = Object.values(global.plugins || {})
       .filter(p => !p.disabled && p.tags && p.tags.includes('eco'))
@@ -42,19 +30,6 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
       const rootPath = join(process.cwd(), 'TheElyMD.jpg')
       if (fs.existsSync(rootPath)) bannerFinal = fs.readFileSync(rootPath)
     }
-
-    const botActual = conn.user?.jid?.split('@')[0].replace(/\D/g, '')
-    const configPath = join('./JadiBots', botActual, 'config.json')
-    if (fs.existsSync(configPath)) {
-      try {
-        const config = JSON.parse(fs.readFileSync(configPath))
-        if (config.name) nombreBot = config.name
-      } catch (e) {}
-    }
-
-    const tipo = conn.user.jid === global.conn.user.jid
-      ? '𝗕𝗼𝘁 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗮𝗹'
-      : '𝗦𝘂𝗯-𝗕𝗼𝘁'
 
     const moneda = global.moneda || '🌼 ElyCoins'
     const userCoins = user.coin || 0
@@ -84,13 +59,6 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   🏦 Banco: ${userBank}
   ✨ Experiencia: ${userExp}
 
- ‧͙⁺˚*･༓☾ 𝑻𝒉𝒆𝑬𝒍𝒚-𝑴𝑫 ☽༓･*˚⁺‧͙ 
-  ║☞ 🤖  𝑩𝒐𝒕☻        ${nombreBot}
-  ║☞ 🏷️  𝑴𝒐𝒅𝒐☻      ${tipo}
-  ║☞ 📅  𝑭𝒆𝒄𝒉𝒂☻     ${date}
-  ║☞ 🕐  𝑯𝒐𝒓𝒂☻      ${time}
-  ║☞ 👥  𝑮𝒓𝒖𝒑𝒐𝒔☻    ${totalGrupos}
-  ║☞ 👤  𝑼𝒔𝒖𝒂𝒓𝒊𝒐𝒔☻  ${totalUsuarios}
   ❀•°•═════ஓ๑♡๑ஓ═════•°•❀
   𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸 𓉳
     ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡
@@ -113,54 +81,27 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
     const texto = `${before}\n${comandosEco}\n${after}`
 
-    // ========== BOTONES INTERACTIVOS (FUNCIONALES) ==========
-    const rows = [
-      { title: '🏪 Tienda', id: `${_p}tienda` },
-      { title: '📅 Daily', id: `${_p}daily` },
-      { title: '💰 Banco', id: `${_p}bank` },
-      { title: '🔄 Transferir', id: `${_p}transferir` },
-      { title: '🌼 Menú Principal', id: `${_p}menu` }
-    ]
-
-    const buttonsMessage = {
-      viewOnceMessage: {
-        message: {
-          messageContextInfo: {},
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            header: {
-              title: '🌼 THEELY-MD — ECONOMÍA',
-              subtitle: 'Selecciona una opción',
-              hasMediaAttachment: !!bannerFinal
-            },
-            body: { text: texto.trim() },
-            footer: { text: '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳  ·  𝙴𝚌𝚘𝚗𝚘𝚖𝚒́𝚊' },
-            nativeFlowMessage: {
-              buttons: [{
-                name: 'single_select',
-                buttonParamsJson: JSON.stringify({
-                  title: '📋 ACCIONES RÁPIDAS',
-                  sections: [{
-                    title: '🔽 Elige una opción',
-                    rows
-                  }]
-                })
-              }]
-            }
-          })
-        }
+    const messageContent = {
+      text: texto.trim(),
+      contextInfo: {
+        forwardingScore: 999,
+        isForwarded: true
       }
     }
 
     if (bannerFinal) {
-      // Si hay imagen, se usa como header (se requiere subir la imagen como attachment)
-      // Pero para simplificar, mejor enviamos solo texto con botones.
-      // O puedes usar la imagen en el header si la conviertes a base64.
-      // Lo dejamos como texto plano con botones.
-      delete buttonsMessage.viewOnceMessage.message.interactiveMessage.header.hasMediaAttachment
+      await conn.sendMessage(m.chat, {
+        image: bannerFinal,
+        caption: texto.trim(),
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: true
+        }
+      }, { quoted: m })
+    } else {
+      await conn.sendMessage(m.chat, messageContent, { quoted: m })
     }
 
-    const msg = generateWAMessageFromContent(m.chat, buttonsMessage, { quoted: m })
-    await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
     await m.react('💰')
 
   } catch (e) {
@@ -173,7 +114,7 @@ handler.command = ['menueco', 'economia', 'eco', 'menuconomia']
 handler.tags = ['main']
 handler.help = ['menueco']
 handler.desc = 'Muestra el menú de economía del bot'
-handler.register = false
+handler.register = true
 handler.limit = false
 
 export default handler
