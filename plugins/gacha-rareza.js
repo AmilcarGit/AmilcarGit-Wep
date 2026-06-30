@@ -33,6 +33,7 @@ const handler = async (m, { conn }) => {
 handler.help    = ['rareza']
 handler.tags    = ['gacha']
 handler.command = ['rareza', 'rarezas', 'rates']
+handler.register = true
 handler.desc    = 'Muestra las probabilidades del gacha'
 
 export default handler
