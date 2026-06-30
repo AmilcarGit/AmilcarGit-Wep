@@ -6,19 +6,8 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
     const user = global.db.data.users[m.sender] || {}
     const name = await conn.getName(m.sender)
 
-    const totalGrupos = Object.keys(global.db.data.chats || {}).filter(id => id.endsWith('@g.us')).length
-    const totalUsuarios = Object.keys(global.db.data.users || {}).length
-
     const ahora = new Date()
     const horaPeru = new Date(ahora.toLocaleString('en-US', { timeZone: 'America/Lima' }))
-
-    const date = horaPeru.toLocaleDateString('es', {
-      day: 'numeric', month: 'long', year: 'numeric', weekday: 'long'
-    })
-
-    const time = horaPeru.toLocaleTimeString('es', {
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-    })
 
     const help = Object.values(global.plugins || {})
       .filter(p => !p.disabled && p.tags && p.tags.includes('game'))
@@ -31,7 +20,6 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
         desc: p.desc || p.description || 'Sin descripción'
       }))
 
-    let nombreBot = 'TheEly MD'
     let bannerFinal = null
 
     const imagePath = join(process.cwd(), 'lib', 'TheElyMD.jpg')
@@ -41,19 +29,6 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
       const rootPath = join(process.cwd(), 'TheElyMD.jpg')
       if (fs.existsSync(rootPath)) bannerFinal = fs.readFileSync(rootPath)
     }
-
-    const botActual = conn.user?.jid?.split('@')[0].replace(/\D/g, '')
-    const configPath = join('./JadiBots', botActual, 'config.json')
-    if (fs.existsSync(configPath)) {
-      try {
-        const config = JSON.parse(fs.readFileSync(configPath))
-        if (config.name) nombreBot = config.name
-      } catch (e) {}
-    }
-
-    const tipo = conn.user.jid === global.conn.user.jid
-      ? '𝗕𝗼𝘁 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗮𝗹'
-      : '𝗦𝘂𝗯-𝗕𝗼𝘁'
 
     const moneda = global.moneda || '🌼 ElyCoins'
     const userCoins = user.coin || 0
@@ -83,13 +58,6 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   🏦 Banco: ${userBank}
   ✨ Experiencia: ${userExp}
 
- ‧͙⁺˚*･༓☾ 𝑻𝒉𝒆𝑬𝒍𝒚-𝑴𝑫 ☽༓･*˚⁺‧͙ 
-  ║☞ 🤖  𝑩𝒐𝒕☻        ${nombreBot}
-  ║☞ 🏷️  𝑴𝒐𝒅𝒐☻      ${tipo}
-  ║☞ 📅  𝑭𝒆𝒄𝒉𝒂☻     ${date}
-  ║☞ 🕐  𝑯𝒐𝒓𝒂☻      ${time}
-  ║☞ 👥  𝑮𝒓𝒖𝒑𝒐𝒔☻    ${totalGrupos}
-  ║☞ 👤  𝑼𝒔𝒖𝒂𝒓𝒊𝒐𝒔☻  ${totalUsuarios}
   ❀•°•═════ஓ๑♡๑ஓ═════•°•❀
   𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸 𓉳
     ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡
@@ -112,33 +80,25 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
     const texto = `${before}\n${comandosGame}\n${after}`
 
-    const buttons = [
-      { buttonId: '.trivia', buttonText: { displayText: '🧠 𝗧𝗿𝗶𝘃𝗶𝗮' }, type: 1 },
-      { buttonId: '.ppt', buttonText: { displayText: '✊ 𝗣𝗣𝗧' }, type: 1 },
-      { buttonId: '.gacha', buttonText: { displayText: '🎲 𝗚𝗮𝗰𝗵𝗮' }, type: 1 },
-      { buttonId: '.menu', buttonText: { displayText: '🌼 𝗠𝗲𝗻ú 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗮𝗹' }, type: 1 }
-    ]
-
-    const messageContent = {
-      caption: texto.trim(),
-      footer: '𝚃𝙷𝙴𝙴𝙻𝚈-𝙼𝙳  ·  𝙶𝚊𝚖𝚎𝚜',
-      buttons,
-      headerType: 4,
-      contextInfo: {
-        forwardingScore: 999,
-        isForwarded: true
-      }
-    }
-
     if (bannerFinal) {
-      messageContent.image = bannerFinal
+      await conn.sendMessage(m.chat, {
+        image: bannerFinal,
+        caption: texto.trim(),
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: true
+        }
+      }, { quoted: m })
     } else {
-      messageContent.text = texto.trim()
-      delete messageContent.caption
-      delete messageContent.headerType
+      await conn.sendMessage(m.chat, {
+        text: texto.trim(),
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: true
+        }
+      }, { quoted: m })
     }
 
-    await conn.sendMessage(m.chat, messageContent, { quoted: m })
     await m.react('🎮')
 
   } catch (e) {
