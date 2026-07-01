@@ -6,7 +6,6 @@ const tags = {
   reacciones:   '𖣐 Reacciones𖦃',
   sticker:      '𖥸 Stickers𖧶',
   ia:           '♞ 𝐈𝐀♔',
-  creador:        '☕︎︎ Owner',
   main:          '𖨆 menus/comandos',
 }
 
