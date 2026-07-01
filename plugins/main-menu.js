@@ -4,7 +4,7 @@ import { join } from 'path'
 const tags = {
   premium:      '𓅖 Premium𓅓', 
   reacciones:   '𖣐 Reacciones𖦃',
-  main:          '𖨆 menus/comandos',
+  main:         '𖨆 Menús y Comandos',
 }
 
 const defaultMenu = {
@@ -12,7 +12,6 @@ const defaultMenu = {
  ❛ ━━━━━━･❪ ❁ ❫ ･━━━━━━ ❜
    🂡𝐓 𝐇 𝐄 𝐄 𝐋 𝐘 𓆆 𝐌 𝐃
  ‧̍̊·̊‧̥°̩̥˚̩̩̥͙°̩̥‧̥·̊‧̍̊ ♡ °̩̥˚̩̩̥͙°̩̥ ·͙*̩̩͙˚̩̥̩̥*̩̩̥͙·̩̩̥͙*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ °̩̥˚̩̩̥͙°̩̥ ♡ ‧̍̊·̊‧̥°̩̥˚̩̩̥͙°̩̥‧̥·̊‧̍̊
-
 
   🌼 *¡Hola,* *%name*! 
    *%greeting*
@@ -30,8 +29,9 @@ const defaultMenu = {
     ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡
 %readmore`.trimStart(),
 
-  header: '\n  _*𓅇༼ %category ༽𓅇*_\n',
-  body:   '  ═❧☛  *%cmd* %islimit %isPremium\n  ➥ ☄︎➫    %desc𓆪',
+  // 🔥 FORMATO MEJORADO: más separación y viñetas
+  header: '\n\n  ───  *%category*  ───\n\n',
+  body:   '  • *%cmd* %islimit %isPremium\n    ➥ %desc\n',
   footer: '',
 
   after: ` 
@@ -117,14 +117,15 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
               .replace(/%islimit/g, menu.limit ? '🔒' : '')
               .replace(/%isPremium/g, menu.premium ? '💎' : '')
               .replace(/%desc/g, menu.desc)
-          ).join('\n')).join('\n')
+          ).join('\n')) // ← aquí se unen los comandos de un mismo plugin
+          .join('\n') // ← separación entre plugins
 
         return cmds
           ? [menuConfig.header.replace(/%category/g, tags[tag]), cmds, menuConfig.footer].join('\n')
           : ''
       }).filter(Boolean),
       menuConfig.after
-    ].join('\n')
+    ].join('\n') // ← separación general entre secciones
 
     const replace = {
       '%': '%',
