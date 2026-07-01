@@ -106,9 +106,9 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   }
 }
 
-handler.command = ['menugrupo', 'grupomenu', 'admin']
+handler.command = ['menu6', 'grupomenu', 'admin']
 handler.tags = ['main']
-handler.help = ['menugrupo']
+handler.help = ['menu6']
 handler.desc = 'Muestra el menú de administración de grupos del bot'
 handler.register = false
 handler.limit = false
