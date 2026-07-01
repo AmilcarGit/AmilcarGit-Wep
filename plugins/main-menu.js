@@ -3,7 +3,6 @@ import { join } from 'path'
 
 const tags = {
   premium:      '𓅖 Premium𓅓', 
-  game:         '𝄞 Juegos',
   reacciones:   '𖣐 Reacciones𖦃',
   sticker:      '𖥸 Stickers𖧶',
   ia:           '♞ 𝐈𝐀♔',
