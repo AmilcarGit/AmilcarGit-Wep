@@ -4,8 +4,6 @@ import { join } from 'path'
 const tags = {
   premium:      '𓅖 Premium𓅓', 
   reacciones:   '𖣐 Reacciones𖦃',
-  sticker:      '𖥸 Stickers𖧶',
-  ia:           '♞ 𝐈𝐀♔',
   main:          '𖨆 menus/comandos',
 }
 
