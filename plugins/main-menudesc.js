@@ -56,7 +56,8 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   ⚡ Rápidas y seguras
 
   ❀•°•═════ஓ๑♡๑ஓ═════•°•❀
-  𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸 𓉳
+  𓏲🇨 🇴 🇲 🇦 🇳 🇩 🇮 🇹 🇴 🇸𓉳
+     🇩 🇪 🇸 🇨 🇦 🇷 🇬 🇦 🇸 
     ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡
 `
 
