@@ -4,8 +4,7 @@ import { join } from 'path'
 const tags = {
   premium:      '𓅖 Premium𓅓',
   jadibot:      '☘︎ Sub-Bots⚘',
-  descargas:    '✎ Descargas☔︎︎',
-  info:         '✉ Información♾︎', 
+  descargas:    '✎ Descargas☔︎︎', 
   grupo:        '♨︎ Grupos☠︎',
   eco:          '☎︎ RPG/Economía☣︎',
   tools:        '☢︎ Herramientas♯',
