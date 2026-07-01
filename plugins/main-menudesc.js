@@ -105,9 +105,9 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   }
 }
 
-handler.command = ['menudesc', 'descargas', 'downloads']
+handler.command = ['menu1', 'descargas', 'downloads']
 handler.tags = ['main']
-handler.help = ['menudesc']
+handler.help = ['menu1']
 handler.desc = 'Muestra el menú de descargas del bot'
 handler.register = false
 handler.limit = false
