@@ -9,7 +9,6 @@ const tags = {
   eco:          '☎︎ RPG/Economía☣︎',
   tools:        '☢︎ Herramientas♯',
   game:         '𝄞 Juegos',
-  gacha:        '𖡹 Gacha𖣇',
   reacciones:   '𖣐 Reacciones𖦃',
   estudio:      '🂽 Escuela🃁', 
   sticker:      '𖥸 Stickers𖧶',
